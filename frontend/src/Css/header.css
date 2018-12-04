@@ -1,0 +1,57 @@
+.header {
+  background-color: #F68F54;
+}
+
+.header__topLink {
+  padding: 0.5rem 3rem;
+  border-bottom: 1px solid moccasin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header__topLink img {
+  margin-right: 2rem;
+}
+
+.header__contactus {
+  margin-left: 5rem;
+  margin-right: auto;
+  text-decoration: none;
+  color: #000000;
+}
+
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 3rem;
+}
+
+.header__monthlySpecial {
+  text-decoration: none;
+  color: #000000;
+}
+
+.header__monthlySpecial img {
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.header__logo {
+  padding: 0.5rem 3rem;
+  width: 180px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,68 @@
+.header{
+
+    background-color: #F68F54;
+
+    &__topLink
+    {
+        padding: 0.5rem 3rem;
+        border-bottom: 1px solid moccasin;
+        display: flex;
+        justify-content: space-around;
+
+        & img
+        {
+            margin-right: 2rem;
+        }
+    }
+
+
+
+    &__contactus
+    {
+        margin-left: 5rem;
+        margin-right: auto;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    &__wrapper
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding: 0.5rem 3rem;
+
+    }
+
+    &__monthlySpecial
+    {
+
+        text-decoration: none;
+        color:#000000;
+
+        & img
+        {
+            vertical-align: middle;
+            margin-right:0.2rem;
+        }
+    }
+
+    &__logo
+    {
+        padding: 0.5rem 3rem;
+        width: 180px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    &__search
+    {
+
+    }
+
+    &__navbar
+    {
+
+    }
+}
