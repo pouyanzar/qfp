@@ -31,30 +31,17 @@ app.get('/:makeId', (req,res)=>{
     .catch(err => res.status(500).json(err))
 })
 
-app.get('/makes/:modelId', (req,res)=>{
+app.get('/:makeId/:modelId', (req,res)=>{
 
-    const modelId = Number(req.params.modelId);
-    // const makeId = Number(req.params.makeId);
-
-    // db.Modelcat.findAll({
-    //     where:{
-    //         model_id: modelId
-    //     }
-    // })
+    const modelId = req.params.modelId;
     db.Model.findAll({
         where: {
-            id: req.params.modelId
+            id: modelId
         },
         include: [db.Category]
     })
     .then(models =>        
-        res.json(models))
-    //     .findAll({ 
-    //     where: {
-    //         cat_id: catId
-    //     }
-    // }).then(cat=> {console.log(cat)})
-    // res.json(models.map(cat=> cat.name))
+        res.json(models[0].Categories.map(cat => cat.name)))
 
     .catch(err=> res.status(500).json(err))
 })
