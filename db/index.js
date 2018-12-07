@@ -19,7 +19,7 @@ const db = require('./models');
 const PORT = process.env.PORT || 8080;
 
 app.get('/:makeId', (req,res)=>{
-    const makeId = Number(req.params.makeId);
+    const makeId = req.params.makeId;
 
     db.Model.findAll({
         where:{
@@ -42,9 +42,22 @@ app.get('/:makeId/:modelId', (req,res)=>{
     })
     .then(models =>        
         res.json(models[0].Categories.map(cat => cat.name)))
-
     .catch(err=> res.status(500).json(err))
 })
+
+app.get('/:makeId/:modelId/:catId',(res,req)=>{
+
+    const catId = req.req.params.catId;
+    db.parts.findAll({
+        where: {
+            cat_id: catId
+        }
+    }).then(models => {res.res.json(models)})
+    .catch(err=> res.res.status(500).json(err))
+})
+
+
 app.listen(PORT, ()=>{
     console.log(`server running on ${PORT}`);
 })
+

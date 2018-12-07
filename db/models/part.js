@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Part = sequelize.define('Part', {
+  const Part = sequelize.define('parts', {
     qfpp: DataTypes.STRING,
     cat_id: DataTypes.INTEGER,
     related_part: DataTypes.STRING,
@@ -10,9 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     end_year: DataTypes.INTEGER
   }, {
     underscored: true,
+    timestamps:false
   });
   Part.associate = function(models) {
     // associations can be defined here
+    Part.belongsTo(models.Category,{foreignKey: 'cat_id'});
   };
   return Part;
 };
