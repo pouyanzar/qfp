@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   Model.associate = function(models) {
     // associations can be defined here
     Model.belongsToMany(models.Category, {through: 'modelcats', foreignKey:'model_id', otherKey: 'cat_id'});
-
+    Model.belongsTo(models.Make, {foreignKey:'make_id'});
   };
   return Model;
 };
