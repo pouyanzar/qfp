@@ -24,7 +24,9 @@ class App extends Component {
             <Route path="/:makeName/:modelName/:catName" exact render={(props)=><ProductList makeName={props.match.params.makeName}
                                                                                          modelName={props.match.params.modelName}
                                                                                          catName={props.match.params.catName} />}/>
-            <Route path="/:makeName/:modelName/:catName/:qfpp" exact render={(props) => <ProductDetail url={props.match.params.qfpp} base={props.match.url}/>}/>
+            <Route path="/:makeName/:modelName/:catName/:qfpp" exact render={(props) => <ProductDetail url={props.match.params.qfpp} 
+                                                                                                      base={props.match.url}
+                                                                                                      />}/>
             {/* <Route path="/" component={App}/> */}
 
           </Switch>

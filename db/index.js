@@ -1,7 +1,8 @@
 const express = require('express'),
     app = express(),
     Sequelize = require('sequelize'),
-    cors = require('cors');
+    cors = require('cors'),
+    Op = Sequelize.Op;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -18,11 +19,14 @@ const db = require('./models');
 
 const PORT = process.env.PORT || 8080;
 
+
+
 app.get('/', (req,res)=>{
     db.Make.findAll()
     .then(makes => res.json(makes))
     .catch(err=>res.status(500).json(err));
 })
+
 
 app.get('/products/:qfpp',(req, res)=>{
     const qfpp = req.params.qfpp;
@@ -71,10 +75,7 @@ app.get('/:makeName/:modelName', (req,res)=>{
     .catch(err=> res.status(500).json(err))
 })
 
-// app.post('/?search=', (req,res)=>{
-//     const search = req.body.search;
-//     db
-// }
+
 
 app.get('/:makeName/:modelName/:catName',(res,req)=>{
 
