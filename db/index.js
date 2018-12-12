@@ -1,7 +1,8 @@
 const express = require('express'),
     app = express(),
     Sequelize = require('sequelize'),
-    cors = require('cors');
+    cors = require('cors'),
+    Op = Sequelize.Op;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -18,25 +19,54 @@ const db = require('./models');
 
 const PORT = process.env.PORT || 8080;
 
-app.get('/:makeId', (req,res)=>{
-    const makeId = req.params.makeId;
 
-    db.Model.findAll({
+
+app.get('/', (req,res)=>{
+    db.Make.findAll()
+    .then(makes => res.json(makes))
+    .catch(err=>res.status(500).json(err));
+})
+
+
+app.get('/products/:qfpp',(req, res)=>{
+    const qfpp = req.params.qfpp;
+
+    db.parts.find({
         where:{
-            make_id: makeId
+            qfpp: qfpp
         }
-    }).then(models =>{ 
+    })
+
+    .then(parts=>res.json(parts))
+    .catch(err=>res.status(500).json(err));
+})
+app.get('/:makeName', (req,res)=>{
+    const makeName = req.params.makeName;
+
+    db.Make.find({
+        where:{
+            name: makeName
+        }
+    })
+    .then(makes=>
+        
+        db.Model.findAll({
+        where:{
+            make_id: makes.id
+        }
+    }))
+    .then(models =>{ 
         res.json(models.map(model =>model.name))
     })
     .catch(err => res.status(500).json(err))
 })
 
-app.get('/:makeId/:modelId', (req,res)=>{
+app.get('/:makeName/:modelName', (req,res)=>{
 
-    const modelId = req.params.modelId;
+    const modelName = req.params.modelName;
     db.Model.findAll({
         where: {
-            id: modelId
+            name: modelName
         },
         include: [db.Category]
     })
@@ -45,14 +75,21 @@ app.get('/:makeId/:modelId', (req,res)=>{
     .catch(err=> res.status(500).json(err))
 })
 
-app.get('/:makeId/:modelId/:catId',(res,req)=>{
 
-    const catId = req.req.params.catId;
-    db.parts.findAll({
+
+app.get('/:makeName/:modelName/:catName',(res,req)=>{
+
+    const catName = req.req.params.catName;
+    db.Category.find({
         where: {
-            cat_id: catId
+            name: catName
         }
-    }).then(models => {res.res.json(models)})
+    }).then(categories => db.parts.findAll({
+        where:{
+            cat_id: categories.id
+        }
+    }))
+    .then(categories => res.res.json(categories))
     .catch(err=> res.res.status(500).json(err))
 })
 

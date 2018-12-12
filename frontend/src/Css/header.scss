@@ -56,13 +56,135 @@
         object-fit: cover;
     }
 
-    &__search
-    {
-
-    }
-
     &__navbar
     {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0.5rem;
+        background-color: #000000;
 
+
+        &--item
+        {
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1rem;
+
+            &:first-child{
+                margin-left:5rem;
+            }
+            // text-shadow: rgb(240, 140, 78) 2px 2px;
+            
+            &:hover
+            {
+                background-color: red;
+            }
+        }
+
+        &--level1, &--level2{
+            top: 15.9rem;
+            min-height:auto;
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(245, 200, 78) ;
+            padding: 1rem 0 0 5rem;
+            font-weight:bold;
+            overflow: hidden;
+        }
+
+        &--item2, &--item3{
+                margin:1rem 3rem;
+                padding: 1rem;
+                color:darkred;
+                text-decoration: none;
+                &:hover{
+                    background-color: #F68F54;
+                    border-radius: 50px;
+                }
+        }
+
+       }
+}
+
+.hide{
+    display: none;
+}
+
+.product{
+    border: 1px solid darkred;
+    
+    &__img{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
     }
 }
+
+.details{
+    top: 15.9rem;
+    width:87vw;
+    min-height:auto;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    // justify-content: space-around;
+    background-color: #ffffff ;
+    padding: 1rem 5rem;
+    overflow: hidden;
+    
+    &__detail{
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 1.5rem;
+        text-align: left;
+        font-size:18px;
+    }
+
+    &__img{
+        width:400px;
+        height:400px;
+        object-fit: contain;
+        margin: 5rem 10rem;
+        border: 5px solid #F68F54;
+    }
+
+    &__label{
+        font-weight: bold;
+    }
+}
+.slideshow{
+    margin-top: 2.5rem;
+    width:85vw;
+    object-fit: contain;
+}
+
+.search
+    {
+        position: relative;
+        display:flex;
+        align-items: flex-start;
+        margin:1rem;
+        justify-content: flex-end;
+        
+
+       &__input{
+           height:30px;
+           width:30vw;
+           background-color: lemonchiffon;
+
+       } 
+
+       &__button{
+           background-color: moccasin;
+
+       }
+
+       &__img{
+           position: absolute;
+           margin: 0.5rem
+
+       }
+    }

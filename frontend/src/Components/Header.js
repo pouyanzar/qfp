@@ -1,10 +1,12 @@
 import React from 'react';
 import '../Css/header.css';
 import {Link} from 'react-router-dom';
+import TopMenu from './TopMenu';
 class Header extends React.Component{
 
     render()
     {
+        const toggle = this.props.toggle;
         return(
             <header className="header">
                 <div className="header__topLink">
@@ -18,8 +20,15 @@ class Header extends React.Component{
                         <img src='/Assets/Icons/calendar.svg' alt='calendar'/>Monthly Special
                     </a>
                 </div>
-                <div className="header__search"></div>
-                <nav className="header-navbar"></nav>
+                <div className="header__search">
+                    <form className="search">
+                        <input className="search__input" type="text" placeholder="search" name="search"/> 
+                        <img className="search__img" src="/Assets/Icons/Search.svg"/>
+                    </form>
+                </div>    
+                <nav className="header__navbar">
+                    <TopMenu />
+                </nav>
             </header>
         )
     }
