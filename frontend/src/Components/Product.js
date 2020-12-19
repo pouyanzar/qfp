@@ -6,7 +6,10 @@ class Product extends React.Component
     {
         return(
             <div className="product">
-                <img className="product__img" src={this.props.img} alt={this.props.pn}/>
+                <img className="product__img" 
+                    src={this.props.img} 
+                    alt={this.props.pn}
+                    />
                 <p className="product__pn">QFPP#:{this.props.pn}</p>
                 <p className="product__price">Price:{this.props.price}</p>
             </div>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "quickfitparts",
+  "private_key_id": "1be44b1ee1ebdabf2d714d938862c6def5229a86",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBbZJpaQ2mEndR\nUVMOQ559A/O8885mvqFLLmmZJA2pouICv75JRxqWoYbLRBh+8jugrRiYy6hAKKzA\nAyas/eBfbu7eo5pdVIoi3x0pHI6IDKhK0X+NDPgZ8SBQDNEleBGthR6lugbj2XA8\nBIyl2BxbPMSXDP9y0/CMT5YKLNnOA7HICekbVLmpxUXAL9hqLBhrM/ECjigNwaCe\nXYbEcKh1Vtdjz8KT7Dg2Fq+sAM1vm3PlbC9LcS1wNGXltJS93CGGnate+ORsbIrZ\nD4BrOmoFz7x/6jCGcH80i5gxbFxDMprpCFQBBLSUxl6uqkEGPn/Pmm1aCdkgE7Pp\n5UAdy+clAgMBAAECggEABAICDHZpFHchzgGbTfqEeWvjM4ZU6Hw6pr/kVASnhP/2\nNDZsX+mMdQKZNCfeTW6HPxR6uxs3LWpry43mnWkkcFIkuoNJzmmqaD+z1Qu30VQp\n/kGaJaQc/mARUaDBRI32AFrmJ4IoMEEaMuVAaxOP1ZRmX2WAKcddNgk9Hz+3EVcR\n5aBpKrPo48ikm93N7Ag8E88TpN3mfUBAhUfE3J2Hb4V2dVaYlaGSR7/ZQjYuwaHm\nYuHLtQTWDrSLteSzdOIDEW8ojoxcuZEw1TnXIzF5Mj3g2y/JAZM0Qx0CDvLxUUm7\nYTiH6NGxLcgKgVnnNvljXawQg2wj/SMKpy/7NaNRQQKBgQDjDt4ydZgYSiDKdPuy\n9lMd9PS5tyqd7lRsout/Ue/XYtMLePTAn6qxj2sEHQ+Hjv1RuE7Vh+pYH6uMPhKh\nxPWunaRWdIUkpA7El9EuMpSy1lM5qLUNBcRiV2IrS4GLZAfRIgGdGmgS24IqH489\nDLXkKScHiGpZFu8gAc94oksowQKBgQDaFVJHihdRVLpOX1GuaiFtYi/69Oiq4Cl1\nqKwqZaYJL8oHc2QPf2uJNETmAG04JnG3RiHhOd8s+mLjMfowRNm5bFKPW3O6Rwax\nG+VyKkXmD6r0abN41//v6y+N45T6xj9ItosJX4nCLQdlUQjnrT1tLCW8C14Qwn0Q\nbM4Pzz6TZQKBgQC9RfyVZY921/xDqIbUpR+ePj7uvTBqXGzF7n2PMddT3Y595sNn\n+vFIeHxF/o+eeeTTBWe5+kWwVh4jlu7jKROADusaIqGGbLfey4tVDlcESUMxMmBS\nTbdqHtu3qYaAks8tV0KvGn8dERyNTqeRxZGuc1uUnPPB9is5rCitr+QlQQKBgCEA\n5QjKjyjRx7ggmL3qddCV8WjrM2LYta2GrzdjVrNBNjPWdKgbwmxrKpocKms69i6k\nQHBTT8EAy4JSh+hSIxj6mav0TRk9snePHzQdzaI5cMe4T17UYXkvgGzaqishYWZh\nqbzrZm+qXNoqX0ygXRFugu9oUP38UOzxamXeGTw5AoGARn7mcCuHZ0EGr26s0E4b\n2CVazznrC1/8SQ7pKlvyiCHOcuaAcnZD/O7cbDGR2b57Ndf45heh4pDN7eNHmztL\nxnWMQXXeuLmVMPRHy+PckGnPYed+RGO5lY2oMF6UTX3hOOT8tC87OgI7c2weGv5c\n5eQElC59pbSuvqNGLzYW8J8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "quickfitparts@quickfitparts.iam.gserviceaccount.com",
+  "client_id": "116621376370246131281",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quickfitparts%40quickfitparts.iam.gserviceaccount.com"
+}

@@ -8,14 +8,17 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors());
 
-const sequelize = new Sequelize('qfp', 'root', 'root', {
-    host:"localhost",
+const sequelize = new Sequelize('bng3ula9hx5zcetcsi4d',
+                                 'uefs9lkbgfgemj0f', 
+                                 'toIlg4BHZEg1ntEqvro7', {
+    host:"bng3ula9hx5zcetcsi4d-mysql.services.clever-cloud.com",
     dialect: 'mysql'
 },{
     timestamps: false
 })
 
 const db = require('./models');
+// const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 const PORT = process.env.PORT || 8080;
 
@@ -60,7 +63,6 @@ app.get('/:makeName', (req,res)=>{
     })
     .catch(err => res.status(500).json(err))
 })
-
 app.get('/:makeName/:modelName', (req,res)=>{
 
     const modelName = req.params.modelName;
@@ -80,13 +82,25 @@ app.get('/:makeName/:modelName', (req,res)=>{
 app.get('/:makeName/:modelName/:catName',(res,req)=>{
 
     const catName = req.req.params.catName;
-    db.Category.find({
+    const modelName = req.req.params.modelName;
+
+    db.Model.find({
         where: {
-            name: catName
-        }
-    }).then(categories => db.parts.findAll({
+            name: modelName,
+        },
+        include:[
+            {
+                model:db.Cateogry,
+                where: {
+                    name: catName
+                }
+            }
+        ]
+        
+    })
+    .then(parts => db.modelcat.findAll({
         where:{
-            cat_id: categories.id
+            cat_id: category.id,
         }
     }))
     .then(categories => res.res.json(categories))

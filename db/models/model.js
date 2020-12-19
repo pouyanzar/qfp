@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define('Model', {
     name: DataTypes.STRING,
-    related_model: DataTypes.STRING,
     make_id: DataTypes.INTEGER
   }, {
     underscored: true,

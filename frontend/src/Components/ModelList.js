@@ -1,40 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
-class ModelList extends React.Component
+export default function ModelList({url,base})
 {
-    state= {models:[]}
-
-    componentDidMount()
-    {
-        fetch(`http://localhost:8080/${this.props.url}`)
+    const [models, setModels] = useState([])
+   
+    useEffect(() => {
+        fetch(`http://localhost:8080/${url}`)
         .then(res => res.json())
-        .then(data => this.setState({models:data}))
+        .then(data => setModels(data))
         // .catch(err => res.status(500).json(err))
-    }
-
-    componentDidUpdate(prevProps, prevState)
-    {       
-        if(prevProps.url !== this.props.url)
-        {
-            fetch(`http://localhost:8080/${this.props.url}`)
-            .then(res => res.json())
-            .then(data => this.setState({models:data}))
-        }
-    }
-
-    render()
+    },[url])
     {
-        console.log(this.props.base)
         return(
             
                 <div className="header__navbar--level1">
-                    {this.state.models.map((model,i)=><Link className="header__navbar--item2" key={i} to={`/${this.props.url}/${model}`}>{model}</Link>)}
+                    {models.map((model,i)=>
+                        <Link className="header__navbar--item2" 
+                            key={i} 
+                            to={`/${url}/${model}`}>
+                                {model}
+                        </Link>)}
                  </div>
             )
     }
 }
 
 
-export default ModelList;
 

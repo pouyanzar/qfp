@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "qfp",
-    "host": "localhost",
+    "username": "uefs9lkbgfgemj0f",
+    "password": "toIlg4BHZEg1ntEqvro7",
+    "database": "bng3ula9hx5zcetcsi4d",
+    "host": "bng3ula9hx5zcetcsi4d-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {
