@@ -1,20 +1,17 @@
-import React from 'react';
+import React from "react";
 
-class Product extends React.Component
-{
-    render()
-    {
-        return(
-            <div className="product">
-                <img className="product__img" 
-                    src={this.props.img} 
-                    alt={this.props.pn}
-                    />
-                <p className="product__pn">QFPP#:{this.props.pn}</p>
-                <p className="product__price">Price:{this.props.price}</p>
-            </div>
-        )
-    }
-}
+const Product = (props) => {
+  return (
+    <div className="product">
+      {props.img ? (
+        <img className="product__img" src={props.img} alt={props.pn} />
+      ) : null}
+      <p className="product__pn">QFPP#:{props.pn}</p>
+      {props.price ? (
+        <p className="product__price">Price:{props.price}</p>
+      ) : null}
+    </div>
+  );
+};
 
 export default Product;
