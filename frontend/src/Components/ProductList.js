@@ -4,8 +4,7 @@ import Product from "./Product";
 // import ProductDetail from "./ProductDetail";
 
 export default function ProductList(props) {
-  const [products, setProducts] = useState([]);
-
+const {products, setProducts} = props;
   useEffect(() => {
     fetch(
       `http://localhost:8080/${props.catName}/${props.makeName}/${props.modelName}`
