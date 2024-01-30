@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
@@ -9,6 +9,8 @@ import ProductDetail from "./Components/ProductDetail";
 // import Slideshow from './Components/Slideshow';
 
 export default function App() {
+  const [products, setProducts] = useState([]);
+
   return (
     <div className="App">
       <Router>
@@ -45,20 +47,23 @@ export default function App() {
                   makeName={props.match.params.makeName}
                   modelName={props.match.params.modelName}
                   base={props.match.url}
+                  products={products}
+                  setProducts={setProducts}
                 />
               )}
             />
-            {/* <Route
+            <Route
               path="/:catName/:makeName/:catName/:qfpp"
               exact
               render={(props) => (
                 <ProductDetail
                   url={props.match.params.qfpp}
                   base={props.match.url}
+                  products={products}
                 />
               )}
             />
-            <Route path="/" component={App}/> */}
+            <Route path="/" component={App}/>
           </Switch>
         </>
       </Router>
