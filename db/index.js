@@ -53,8 +53,9 @@ app.get("/:catName/:makeName", (req, res) => {
       worksheet[mk].v &&
       String(worksheet[mk].v).trim().toUpperCase() === makeName.toUpperCase()
     ) {
+      console.log(worksheet["B" + mk.substring(1, 3)].v);
       models.push(
-        worksheet["B" + mk.substring(1, 3)].v
+        String(worksheet["B" + mk.substring(1, 3)].v)
           .trim()
           .toUpperCase()
           .split(" ")
@@ -88,7 +89,7 @@ app.get("/:catName/:makeName/:modelName", (req, res) => {
           .toUpperCase() === modelName.toUpperCase()
       ) {
         products.push({
-          year: worksheet["C" + mk.substring(1, 3)].v
+          year: String(worksheet["C" + mk.substring(1, 3)].v)
             .trim()
             .toUpperCase()
             .split(" ")
@@ -96,18 +97,19 @@ app.get("/:catName/:makeName/:modelName", (req, res) => {
             .split("/")
             .join(",")
             .split(",")[0],
-          price: (worksheet["H" + mk.substring(1, 3)]
-             && worksheet["H1"].v === 'price') ? worksheet["H" + mk.substring(1, 3)].v 
-                .trim()
-                .toUpperCase()
-                .split(" ")
-                .join(",")
-                .split("/")
-                .join(",")
-                .split(",")[0]
-            : null,
+          price:
+            worksheet["H" + mk.substring(1, 3)] && worksheet["H1"].v === "price"
+              ? String(worksheet["H" + mk.substring(1, 3)].v)
+                  .trim()
+                  .toUpperCase()
+                  .split(" ")
+                  .join(",")
+                  .split("/")
+                  .join(",")
+                  .split(",")[0]
+              : null,
           img: worksheet["G" + mk.substring(1, 3)]
-            ? worksheet["G" + mk.substring(1, 3)].v
+            ? String(worksheet["G" + mk.substring(1, 3)].v)
                 .trim()
                 .toUpperCase()
                 .split(" ")
@@ -117,7 +119,7 @@ app.get("/:catName/:makeName/:modelName", (req, res) => {
                 .split(",")[0]
             : null,
           qfpp: worksheet["F" + mk.substring(1, 3)]
-            ? worksheet["F" + mk.substring(1, 3)].v
+            ? String(worksheet["F" + mk.substring(1, 3)].v)
                 .trim()
                 .toUpperCase()
                 .split(" ")
