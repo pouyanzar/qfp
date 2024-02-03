@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
@@ -63,7 +63,7 @@ export default function App() {
                 />
               )}
             />
-            <Route path="/" component={App}/>
+            <Route path="/" component={App} />
           </Switch>
         </>
       </Router>

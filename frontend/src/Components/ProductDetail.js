@@ -2,7 +2,10 @@ import React from "react";
 
 export default function ProductDetail(props) {
   const { products } = props;
-  const product = products.filter((pt) => pt.qfpp === props.url)[0];
+  const product = products
+    ? products.filter((pt) => pt.qfpp === props.url)[0]
+    : null;
+
   const { img, qfpp, price, year } = product;
 
   return (
