@@ -7,10 +7,36 @@ export default function ProductDetail(props) {
     : null;
 
   const { img, qfpp, price, year } = product;
+  let imgDir = "/Assets/Images/";
 
+  switch (props.base.split("/")[1].toLowerCase()) {
+    case "compressor":
+      imgDir += "COM/";
+      break;
+    case "condenser":
+      imgDir += "CONS/";
+      break;
+    case "dryer":
+      imgDir += "Dryer/";
+      break;
+    case "reservoir tank":
+      imgDir += "RET/";
+      break;
+    default:
+      console.log("no category match");
+  }
+  console.log(img);
   return (
     <div className="details">
-      <img className="details__img" src={img} alt={qfpp} />
+      {img == null ? (
+        <div className="details__noimg">
+          <p>
+            Sorry, no photo available for this product
+          </p>
+        </div>
+      ) : (
+        <img className="details__img" src={imgDir + img} alt={qfpp} />
+      )}
       <div className="details__detail">
         <p className="details__make">
           <span className="details__label">MAKE: </span>

@@ -33,21 +33,39 @@ export default function ProductList(props) {
   }, [props.catName, props.modelName, props.makeName, setProducts]);
 
   return (
-    <div className="header__navbar--level2">
-      {products.map((product, i) => (
-        <Link
-          className="header__navbar--item3"
-          key={i}
-          to={`${props.base}/${product.qfpp}`}
-        >
-          <Product
-            pn={product.qfpp}
-            price={product.price}
-            img={imgDir + product.img}
-            year={product.year}
-          />
-        </Link>
-      ))}
+    <div className="header__container">
+      <div className="header__navbar--title">
+        <h3>
+          {props.catName.charAt(0).toUpperCase() +
+            props.catName.substring(1).toLowerCase() +
+            " / "}
+        </h3>
+        <h3>
+          {props.makeName.charAt(0).toUpperCase() +
+            props.makeName.substring(1).toLowerCase() +
+            " / "}
+        </h3>
+        <h3>
+          {props.modelName.charAt(0).toUpperCase() +
+            props.modelName.substring(1).toLowerCase()}
+        </h3>
+      </div>
+      <div className="product-list">
+        {products.map((product, i) => (
+          <Link
+            className="header__navbar--item3"
+            key={i}
+            to={`${props.base}/${product.qfpp}`}
+          >
+            <Product
+              pn={product.qfpp}
+              price={product.price}
+              img={product.img ? imgDir + product.img : null}
+              year={product.year}
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

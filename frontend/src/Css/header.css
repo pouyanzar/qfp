@@ -1,5 +1,10 @@
 .header {
-  background-color: #F68F54;
+  background-color: #f68f54;
+  width: 100vw;
+}
+.header__container {
+  background-color: rgb(245, 200, 78);
+  margin: 1rem;
 }
 .header__topLink {
   padding: 0.5rem 3rem;
@@ -44,6 +49,14 @@
   padding-left: 0.5rem;
   background-color: #000000;
 }
+.header__navbar--title {
+  display: flex;
+  color: #bc4702;
+  margin: 0.5rem 1rem;
+}
+.header__navbar--title h3 {
+  margin-right: 10px;
+}
 .header__navbar--item {
   font-weight: bold;
   color: #ffffff;
@@ -57,24 +70,24 @@
   background-color: red;
 }
 .header__navbar--level1, .header__navbar--level2 {
-  top: 15.9rem;
+  top: 13rem;
   min-height: auto;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(245, 200, 78);
-  padding: 1rem 0 0 5rem;
   font-weight: bold;
   overflow: hidden;
+  justify-content: center;
 }
 .header__navbar--item2, .header__navbar--item3 {
-  margin: 1rem 3rem;
+  margin: 1rem;
   padding: 1rem;
   color: darkred;
   text-decoration: none;
 }
 .header__navbar--item2:hover, .header__navbar--item3:hover {
-  background-color: #F68F54;
+  background-color: #f68f54;
   border-radius: 50px;
 }
 
@@ -82,26 +95,47 @@
   display: none;
 }
 
+.product-list {
+  min-height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(245, 200, 78);
+  font-weight: bold;
+  overflow: hidden;
+  justify-content: center;
+}
+
 .product {
   border: 1px solid darkred;
+  width: 250px;
+  height: auto;
+}
+.product__noimg {
+  width: 250px;
+  height: 234px;
+  font-size: 1em;
+  text-wrap: wrap;
+  color: #f68f54;
 }
 .product__img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   -o-object-fit: contain;
      object-fit: contain;
 }
+.product__pn {
+  font-size: 0.8em;
+}
 
 .details {
-  top: 15.9rem;
-  width: 87vw;
+  margin: 1rem;
+  width: 75vw;
   min-height: auto;
-  position: absolute;
+  border: 5px solid darkred;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  background-color: #ffffff;
-  padding: 1rem 5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
   overflow: hidden;
 }
 .details__detail {
@@ -116,15 +150,22 @@
   height: 400px;
   -o-object-fit: contain;
      object-fit: contain;
-  margin: 5rem 10rem;
-  border: 5px solid #F68F54;
+  margin: 3rem;
+  border: 5px solid #f68f54;
 }
 .details__label {
   font-weight: bold;
 }
+.details__noimg {
+  margin-top: 3rem;
+  font-size: 2em;
+  text-wrap: wrap;
+  color: #f68f54;
+  width: 10rem;
+}
 
 .slideshow {
-  margin-top: 2.5rem;
+  margin: 1.5rem 0;
   width: 85vw;
   -o-object-fit: contain;
      object-fit: contain;

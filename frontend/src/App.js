@@ -6,15 +6,24 @@ import ProductList from "./Components/ProductList";
 import MakeList from "./Components/MakeList";
 import ModelList from "./Components/ModelList";
 import ProductDetail from "./Components/ProductDetail";
+import Slideshow from "./Components/Slideshow";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-
+  const [show, setShow] = useState(false);
+  const setShowhandler = () => {
+    setShow(!show);
+  }
   return (
     <div className="App">
       <Router>
-        <>
-          <Header />
+        <div className="container">
+          <Header show={show} setShowhandler={setShowhandler} />
+          <img
+            src="/Assets/Images/slideshow/2.jpg"
+            alt="truck"
+            className="slideshow"
+          />
           <Switch>
             <Route
               path="/:catName"
@@ -23,6 +32,7 @@ export default function App() {
                 <MakeList
                   url={props.match.params.catName}
                   base={props.match.url}
+                  show={show}
                 />
               )}
             />
@@ -61,9 +71,9 @@ export default function App() {
                 />
               )}
             />
-            <Route path="/" component={App} />
+            {/* <Route path="/" component={App} /> */}
           </Switch>
-        </>
+        </div>
       </Router>
     </div>
   );
