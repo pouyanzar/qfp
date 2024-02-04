@@ -1,9 +1,7 @@
 var XLSX = require("xlsx");
 const express = require("express"),
   app = express(),
-  // Sequelize = require('sequelize'),
   cors = require("cors");
-// Op = Sequelize.Op;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -20,24 +18,10 @@ app.get("/:catName", (req, res) => {
   const catName = req.params.catName;
   const makes = [];
   let uniqueMakes = [];
-  //   for (const cat of workbook.SheetNames) {
   for (const mk in workbook.Sheets[catName]) {
     if (mk.startsWith("A")) {
       makes.push(workbook.Sheets[catName][mk].v);
     }
-    //   String(workbook.Sheets[catName][mk].v).trim().toLowerCase() ===
-    //     catName.toLowerCase()
-    // ) {
-    //   makes.push(
-    //     workbook.Sheets[catName]["A" + mk.substring(1, 3)].v
-    //       .trim()
-    //       .split("/")
-    //       .join(",")
-    //       .split(",")[0]
-    //       .toUpperCase()
-    //   );
-    // }
-    // }
   }
   uniqueMakes = [...new Set(makes)];
   uniqueMakes.shift();
