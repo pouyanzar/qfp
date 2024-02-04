@@ -6,7 +6,6 @@ import ProductList from "./Components/ProductList";
 import MakeList from "./Components/MakeList";
 import ModelList from "./Components/ModelList";
 import ProductDetail from "./Components/ProductDetail";
-// import Slideshow from './Components/Slideshow';
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -16,7 +15,6 @@ export default function App() {
       <Router>
         <>
           <Header />
-          {/* <Slideshow /> */}
           <Switch>
             <Route
               path="/:catName"
