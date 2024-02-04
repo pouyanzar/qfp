@@ -37,7 +37,7 @@ app.get("/:catName/:makeName", (req, res) => {
       worksheet[mk].v &&
       String(worksheet[mk].v).trim().toUpperCase() === makeName.toUpperCase()
     ) {
-      console.log(worksheet["B" + mk.substring(1, 3)].v);
+      console.log(worksheet["B" + mk.substring(1, 3)]);
       models.push(
         String(worksheet["B" + mk.substring(1, 3)].v)
           .trim()
