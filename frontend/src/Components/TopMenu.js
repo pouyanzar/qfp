@@ -5,7 +5,7 @@ export default function TopMenu() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080")
+    fetch("https://qfp-server.onrender.com")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);

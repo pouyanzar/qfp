@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 // import ProductDetail from "./ProductDetail";
@@ -25,7 +25,7 @@ export default function ProductList(props) {
   }
   useEffect(() => {
     fetch(
-      `http://localhost:8080/${props.catName}/${props.makeName}/${props.modelName}`
+      `https://qfp-server.onrender.com/${props.catName}/${props.makeName}/${props.modelName}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -43,7 +43,7 @@ export default function ProductList(props) {
           <Product
             pn={product.qfpp}
             price={product.price}
-            img={imgDir+product.img}
+            img={imgDir + product.img}
             year={product.year}
           />
         </Link>

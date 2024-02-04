@@ -5,7 +5,7 @@ export default function MakeList({ url, base }) {
   const [makes, setMakes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/${url}`)
+    fetch(`https://qfp-server.onrender.com/${url}`)
       .then((res) => res.json())
       .then((data) => setMakes(data));
   }, [url]);

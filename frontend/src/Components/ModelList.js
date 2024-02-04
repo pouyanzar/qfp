@@ -6,7 +6,7 @@ export default function ModelList({ catName, makeName }) {
   const [models, setModels] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/${catName}/${makeName}`)
+    fetch(`https://qfp-server.onrender.com/${catName}/${makeName}`)
       .then((res) => res.json())
       .then((data) => setModels(data));
     // .catch(err => res.status(500).json(err))
