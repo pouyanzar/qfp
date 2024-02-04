@@ -30,7 +30,7 @@ export default function ProductList(props) {
       .then((res) => res.json())
       .then((data) => setProducts(data));
     // .catch(err => res.status(500).json(err))
-  }, [props.catName, props.modelName, props.makeName]);
+  }, [props.catName, props.modelName, props.makeName, setProducts]);
 
   return (
     <div className="header__navbar--level2">
