@@ -6,14 +6,13 @@ import ProductList from "./Components/ProductList";
 import MakeList from "./Components/MakeList";
 import ModelList from "./Components/ModelList";
 import ProductDetail from "./Components/ProductDetail";
-import Slideshow from "./Components/Slideshow";
 
 export default function App() {
   const [products, setProducts] = useState([]);
   const [show, setShow] = useState(false);
   const setShowhandler = () => {
     setShow(!show);
-  }
+  };
   return (
     <div className="App">
       <Router>
@@ -71,7 +70,6 @@ export default function App() {
                 />
               )}
             />
-            {/* <Route path="/" component={App} /> */}
           </Switch>
         </div>
       </Router>
