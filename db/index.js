@@ -65,17 +65,16 @@ app.get("/:catName/:makeName/:modelName", (req, res) => {
       worksheet[mk].v &&
       String(worksheet[mk].v).trim().toUpperCase() === makeName.toUpperCase()
     ) {
-      console.log("first", worksheet["B" + mk.substring(1, 3)].v);
       if (
         worksheet["B" + mk.substring(1, 3)].v &&
         String(worksheet["B" + mk.substring(1, 3)].v)
-        .trim()
-        .toUpperCase()
-        .split(" ")
-        .join(",")
-        .split("/")
-        .join(",")
-        .split(",")[0] === modelName.toUpperCase()
+          .trim()
+          .toUpperCase()
+          .split(" ")
+          .join(",")
+          .split("/")
+          .join(",")
+          .split(",")[0] === modelName.toUpperCase()
       ) {
         products.push({
           year: String(worksheet["C" + mk.substring(1, 3)].v)
@@ -121,7 +120,6 @@ app.get("/:catName/:makeName/:modelName", (req, res) => {
       }
     }
   }
-  console.log(products);
   uniqueProducts = [...new Set(products)];
   res.json(uniqueProducts);
 });
