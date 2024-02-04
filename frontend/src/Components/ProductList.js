@@ -4,7 +4,25 @@ import Product from "./Product";
 // import ProductDetail from "./ProductDetail";
 
 export default function ProductList(props) {
-const {products, setProducts} = props;
+  const { products, setProducts } = props;
+  let imgDir = "/Assets/Images/";
+
+  switch (props.catName.toLowerCase()) {
+    case "compressor":
+      imgDir += "COM/";
+      break;
+    case "condenser":
+      imgDir += "CONS/";
+      break;
+    case "dryer":
+      imgDir += "Dryer/";
+      break;
+    case "reservoir tank":
+      imgDir += "RET/";
+      break;
+    default:
+      console.log("no category match");
+  }
   useEffect(() => {
     fetch(
       `http://localhost:8080/${props.catName}/${props.makeName}/${props.modelName}`
@@ -12,7 +30,7 @@ const {products, setProducts} = props;
       .then((res) => res.json())
       .then((data) => setProducts(data));
     // .catch(err => res.status(500).json(err))
-  }, []);
+  }, [products]);
 
   return (
     <div className="header__navbar--level2">
@@ -25,7 +43,7 @@ const {products, setProducts} = props;
           <Product
             pn={product.qfpp}
             price={product.price}
-            img={product.img}
+            img={imgDir+product.img}
             year={product.year}
           />
         </Link>
