@@ -15,7 +15,7 @@ export default function App() {
       <Router>
         <>
           <Header />
-          {/* <Switch>
+          <Switch>
             <Route
               path="/:catName"
               exact
@@ -62,7 +62,7 @@ export default function App() {
               )}
             />
             <Route path="/" component={App} />
-          </Switch> */}
+          </Switch>
         </>
       </Router>
     </div>
