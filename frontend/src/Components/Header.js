@@ -2,7 +2,7 @@ import React from "react";
 import "../Css/header.css";
 import { Link } from "react-router-dom";
 import TopMenu from "./TopMenu";
-const Header = (show, setShowhandler) => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header__topLink">
@@ -39,7 +39,7 @@ const Header = (show, setShowhandler) => {
         </form>
       </div>
       <nav className="header__navbar">
-        <TopMenu onClick={setShowhandler} />
+        <TopMenu />
       </nav>
     </header>
   );

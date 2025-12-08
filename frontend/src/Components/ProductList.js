@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
-// import ProductDetail from "./ProductDetail";
 
 export default function ProductList(props) {
   const { products, setProducts } = props;
@@ -29,7 +28,6 @@ export default function ProductList(props) {
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
-    // .catch(err => res.status(500).json(err))
   }, [props.catName, props.modelName, props.makeName, setProducts]);
 
   return (

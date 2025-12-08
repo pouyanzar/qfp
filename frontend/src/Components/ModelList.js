@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import MakeList from "./MakeList";
 
 export default function ModelList({ catName, makeName }) {
   const [models, setModels] = useState([]);
@@ -9,12 +8,10 @@ export default function ModelList({ catName, makeName }) {
     fetch(`https://qfp-server.onrender.com/${catName}/${makeName}`)
       .then((res) => res.json())
       .then((data) => setModels(data));
-    // .catch(err => res.status(500).json(err))
   }, [catName, makeName]);
 
   return (
     <div className="header__navbar--level2">
-      {/* <ModelList/> */}
       {models.map((model, i) => (
         <Link
           className="header__navbar--item3"

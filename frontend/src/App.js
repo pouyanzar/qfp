@@ -9,15 +9,12 @@ import ProductDetail from "./Components/ProductDetail";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-  const [show, setShow] = useState(false);
-  const setShowhandler = () => {
-    setShow(!show);
-  };
+  
   return (
     <div className="App">
       <Router>
         <div className="container">
-          <Header show={show} setShowhandler={setShowhandler} />
+          <Header />
           <img
             src="/Assets/Images/slideshow/2.jpg"
             alt="truck"
@@ -31,7 +28,6 @@ export default function App() {
                 <MakeList
                   url={props.match.params.catName}
                   base={props.match.url}
-                  show={show}
                 />
               )}
             />

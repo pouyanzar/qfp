@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function MakeList({ url, base, show }) {
+export default function MakeList({ url }) {
   const [makes, setMakes] = useState([]);
   useEffect(() => {
     fetch(`https://qfp-server.onrender.com/${url}`)
@@ -11,7 +11,7 @@ export default function MakeList({ url, base, show }) {
   return (
     <div
       className="header__navbar--level1"
-      display={show ? "block" : "none"}
+      // display={show ? "block" : "none"}
     >
       {makes.map((make, i) => (
         <Link className="header__navbar--item2" key={i} to={`/${url}/${make}`}>
